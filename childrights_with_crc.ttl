@@ -1,0 +1,301 @@
+@prefix : <http://www.example.org/childrights#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.example.org/childrights> a owl:Ontology ;
+    rdfs:comment "Ontology for modeling child rights advocacy projects by NGOs, aligned with the UN Convention on the Rights of the Child."@en ;
+    owl:versionInfo "1.0" .
+
+:EducationalAccessCampaign :implementedBy :UNICEF_CH .
+
+:InclusiveEducationProject a :Project,
+        owl:NamedIndividual ;
+    rdfs:label "Inclusive Education for Rural Children" ;
+    :alignedWithCRC :RightToEducation ;
+    :alignsWithCRC :CRC_Article_28 ;
+    :collaboratesWith :UNICEFSwitzerland ;
+    :endYear 2024 ;
+    :focusesOn :RightToEducation ;
+    :implementedBy :Integras ;
+    :locatedIn :CantonValais ;
+    :startYear 2022 .
+
+:RightToHealth a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Right to Health" ;
+    :crcArticleNumber "Article 24" ;
+    rdfs:subClassOf :AdvocacyTopic .
+
+:RightToIdentity a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Right to Identity" ;
+    :crcArticleNumber "Article 8" ;
+    rdfs:subClassOf :AdvocacyTopic .
+
+:YouthParticipationCampaign :alignsWithCRC :CRC_Article_12 ;
+    :implementedBy :Projuventud .
+
+:collaboratesWith a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:label "collaborates with" ;
+    rdfs:domain :Project ;
+    rdfs:range :Partner .
+
+:crcArticleNumber a owl:DatatypeProperty ;
+    rdfs:label "CRC Article Number" ;
+    rdfs:domain :AdvocacyTopic ;
+    rdfs:range xsd:string .
+
+:documentOf a owl:InverseFunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "document of" ;
+    rdfs:domain :Document ;
+    rdfs:range :Project .
+
+:endYear a owl:AnnotationProperty .
+
+:focusesOn a owl:ObjectProperty ;
+    rdfs:label "focuses on" ;
+    rdfs:domain :Project ;
+    rdfs:range :AdvocacyTopic ;
+    rdfs:subPropertyOf :alignedWithCRC .
+
+:implementedBy a owl:ObjectProperty ;
+    rdfs:label "implemented by" ;
+    rdfs:domain :Project ;
+    rdfs:range :NGO ;
+    owl:inverseOf :implements .
+
+:locatedIn a owl:ObjectProperty ;
+    rdfs:label "located in" ;
+    rdfs:domain :Project ;
+    rdfs:range :Region .
+
+:name a owl:AnnotationProperty .
+
+:publicationYear a owl:DatatypeProperty ;
+    rdfs:label "publication year" ;
+    rdfs:domain :Document ;
+    rdfs:range xsd:gYear .
+
+:publishes a owl:ObjectProperty ;
+    rdfs:label "publishes" ;
+    rdfs:domain :NGO ;
+    rdfs:range :Document .
+
+:startYear a owl:AnnotationProperty .
+
+:CRC_Article_12 a :CRCArticle ;
+    rdfs:label "Respect for the views of the child"^^xsd:string ;
+    :articleNumber "12"^^xsd:string .
+
+:CRC_Article_24 a :CRCArticle ;
+    rdfs:label "Right to health and health services"^^xsd:string ;
+    :articleNumber "24"^^xsd:string .
+
+:ChildDataProtection a :AdvocacyTopic,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Child Data Protection" ;
+    :crcArticleNumber "Article 16" ;
+    rdfs:subClassOf :Region .
+
+:IntegrasGuide2023 a :Document,
+        owl:NamedIndividual ;
+    rdfs:label "Integras Advocacy Training Guide 2023" ;
+    :documentOf :AdvocacyTrainingProject ;
+    :publicationYear "2023"^^xsd:gYear .
+
+:MentalHealth a :AdvocacyTopic,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Mental Health" ;
+    :crcArticleNumber "Article 24" ;
+    rdfs:subClassOf :AdvocacyTopic .
+
+:Projuventud a :NGO ;
+    rdfs:label "Pro Juventud" ;
+    :implements :MentalHealthInitiative ;
+    :name "Pro Juventud" ;
+    :publishes :YouthSupportReport2023 .
+
+:PsychologySwiss a :Partner,
+        owl:NamedIndividual ;
+    rdfs:label "Swiss Society for Psychology" .
+
+:RightToParticipation a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Right to Participation" ;
+    :crcArticleNumber "Article 12" ;
+    rdfs:subClassOf :AdvocacyTopic .
+
+:RightToProtectionFromViolence a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Right to Protection from Violence" ;
+    :crcArticleNumber "Article 19" ;
+    rdfs:subClassOf :AdvocacyTopic .
+
+:SaveTheChildrenWhitePaper2022 a :Document,
+        owl:NamedIndividual ;
+    rdfs:label "Save the Children White Paper 2022" ;
+    :documentOf :ChildProtectionCampaign ;
+    :publicationYear "2022"^^xsd:gYear .
+
+:TdhEducationPaper a :Document,
+        owl:NamedIndividual ;
+    rdfs:label "Tdh Report on Educational Access 2023" ;
+    :documentOf :EducationRightsProject ;
+    :publicationYear "2023"^^xsd:gYear .
+
+:TerreDesHommes a :NGO ;
+    rdfs:label "Terre des Hommes Schweiz" ;
+    :implements :EducationRightsProject ;
+    :name "Terre des Hommes Switzerland" ;
+    :publishes :TdhEducationPaper .
+
+:UNICEFReport2023 a :Document,
+        owl:NamedIndividual ;
+    rdfs:label "UNICEF Annual Report 2023" ;
+    :documentOf :ChildRightsDataProject ;
+    :publicationYear "2023"^^xsd:gYear .
+
+:YouthSupportReport2023 a :Document,
+        owl:NamedIndividual ;
+    rdfs:label "Youth Support and Mental Health Report 2023" ;
+    :documentOf :MentalHealthInitiative ;
+    :publicationYear "2023"^^xsd:gYear .
+
+:alignedWithCRC a owl:ObjectProperty ;
+    rdfs:label "aligned with CRC" ;
+    rdfs:domain :Project ;
+    rdfs:range :AdvocacyTopic .
+
+:implements a owl:ObjectProperty ;
+    rdfs:label "implements" ;
+    rdfs:domain :NGO ;
+    rdfs:range :Project .
+
+xsd:gYear a rdfs:Datatype .
+
+:AdvocacyTrainingProject a :Project,
+        owl:NamedIndividual ;
+    rdfs:label "Advocacy Training for Youth" ;
+    :collaboratesWith :UNIL ;
+    :endYear 2022 ;
+    :focusesOn :RightToParticipation ;
+    :implementedBy :UNICEF_CH ;
+    :locatedIn :LakeGenevaRegion ;
+    :startYear 2021 .
+
+:CRC_Article_28 a :CRCArticle ;
+    rdfs:label "Right to education"^^xsd:string ;
+    :articleNumber "28"^^xsd:string .
+
+:CantonValais a :Region,
+        owl:NamedIndividual ;
+    rdfs:label "Canton of Valais" .
+
+:ChildProtectionCampaign a :Project,
+        owl:NamedIndividual ;
+    rdfs:label "Child Protection Campaign 2022" ;
+    :collaboratesWith :UNICEFSwitzerland ;
+    :endYear 2021 ;
+    :focusesOn :RightToProtectionFromViolence ;
+    :implementedBy :SaveTheChildren ;
+    :locatedIn :Zurich ;
+    :startYear 2020 .
+
+:ChildRightsDataProject a :Project,
+        owl:NamedIndividual ;
+    rdfs:label "Child Rights Data Project" ;
+    :collaboratesWith :UNIL ;
+    :endYear 2023 ;
+    :focusesOn :ChildDataProtection ;
+    :implementedBy :SaveTheChildren ;
+    :locatedIn :LakeGenevaRegion ;
+    :startYear 2021 .
+
+:EducationRightsProject a :Project,
+        owl:NamedIndividual ;
+    rdfs:label "Educational Access and Rights Campaign" ;
+    :alignsWithCRC :CRC_Article_28 ;
+    :collaboratesWith :UNICEFSwitzerland ;
+    :endYear 2021 ;
+    :focusesOn :RightToEducation ;
+    :implementedBy :Integras ;
+    :locatedIn :CantonValais ;
+    :startYear 2019 .
+
+:Integras a :NGO ;
+    rdfs:label "Integras" ;
+    :implements :AdvocacyTrainingProject ;
+    :name "Integras" ;
+    :publishes :IntegrasGuide2023 .
+
+:LakeGenevaRegion a :Region,
+        owl:NamedIndividual ;
+    rdfs:label "Lake Geneva Region" .
+
+:MentalHealthInitiative a :Project,
+        owl:NamedIndividual ;
+    rdfs:label "Youth Mental Health Initiative" ;
+    :alignsWithCRC :CRC_Article_24 ;
+    :collaboratesWith :PsychologySwiss ;
+    :endYear 2022 ;
+    :focusesOn :MentalHealth ;
+    :implementedBy :TerreDesHommes ;
+    :locatedIn :Zurich ;
+    :startYear 2020 .
+
+:SaveTheChildren a :NGO ;
+    rdfs:label "Save the Children Switzerland" ;
+    :implements :ChildProtectionCampaign ;
+    :name "Save the Children Switzerland" ;
+    :publishes :SaveTheChildrenWhitePaper2022 .
+
+:UNICEF_CH a :NGO ;
+    rdfs:label "UNICEF Switzerland and Liechtenstein" ;
+    :implements :ChildRightsDataProject ;
+    :name "UNICEF Switzerland and Liechtenstein" ;
+    :publishes :UNICEFReport2023 .
+
+:UNIL a :Partner,
+        owl:NamedIndividual ;
+    rdfs:label "University of Lausanne (UNIL)" .
+
+:Zurich a :Region,
+        owl:NamedIndividual ;
+    rdfs:label "Zurich" .
+
+:RightToEducation a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Right to Education" ;
+    :crcArticleNumber "Article 28" ;
+    rdfs:subClassOf :AdvocacyTopic .
+
+:UNICEFSwitzerland a :Partner,
+        owl:NamedIndividual ;
+    rdfs:label "UNICEF Switzerland" .
+
+:Partner a owl:Class ;
+    rdfs:label "Partner" .
+
+:Region a owl:Class ;
+    rdfs:label "Region" .
+
+:Document a owl:Class ;
+    rdfs:label "Document" .
+
+:NGO a owl:Class ;
+    rdfs:label "NGO" .
+
+:AdvocacyTopic a owl:Class ;
+    rdfs:label "Advocacy Topic",
+        "Tema di advocacy",
+        "Thema der Interessenvertretung",
+        "Thème de plaidoyer" .
+
+:Project a owl:Class ;
+    rdfs:label "Project" .
+
