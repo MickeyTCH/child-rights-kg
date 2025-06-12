@@ -181,6 +181,7 @@ xsd:gYear a rdfs:Datatype .
 :AdvocacyTrainingProject a :Project,
         owl:NamedIndividual ;
     rdfs:label "Advocacy Training for Youth" ;
+    :alignedWith :Article12 ;
     :collaboratesWith :UNIL ;
     :endYear 2022 ;
     :focusesOn :RightToParticipation ;
@@ -199,6 +200,7 @@ xsd:gYear a rdfs:Datatype .
 :ChildProtectionCampaign a :Project,
         owl:NamedIndividual ;
     rdfs:label "Child Protection Campaign 2022" ;
+    :alignedWith: Article19 ;
     :collaboratesWith :UNICEFSwitzerland ;
     :endYear 2021 ;
     :focusesOn :RightToProtectionFromViolence ;
@@ -209,6 +211,7 @@ xsd:gYear a rdfs:Datatype .
 :ChildRightsDataProject a :Project,
         owl:NamedIndividual ;
     rdfs:label "Child Rights Data Project" ;
+    :alignedWith :Article16
     :collaboratesWith :UNIL ;
     :endYear 2023 ;
     :focusesOn :ChildDataProtection ;
