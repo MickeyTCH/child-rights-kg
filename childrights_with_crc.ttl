@@ -208,7 +208,7 @@ xsd:gYear a rdfs:Datatype .
 :ChildProtectionCampaign a :Project,
         owl:NamedIndividual ;
     rdfs:label "Child Protection Campaign 2022" ;
-    :alignedWith : CRC_Article19 ;
+    :alignedWith :CRC_Article19 ;
     :collaboratesWith :UNICEFSwitzerland ;
     :endYear 2021 ;
     :focusesOn :RightToProtectionFromViolence ;
