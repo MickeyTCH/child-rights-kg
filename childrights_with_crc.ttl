@@ -124,8 +124,8 @@
 
 :Projuventud a :NGO ;
     rdfs:label "Pro Juventud" ;
-    :implements :MentalHealthInitiative ;
     :name "Pro Juventud" ;
+    :implements :MentalHealthInitiative ;
     :publishes :YouthSupportReport2023 .
 
 :PsychologySwiss a :Partner,
