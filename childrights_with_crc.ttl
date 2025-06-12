@@ -211,7 +211,7 @@ xsd:gYear a rdfs:Datatype .
 :ChildRightsDataProject a :Project,
         owl:NamedIndividual ;
     rdfs:label "Child Rights Data Project" ;
-    :alignedWith :Article16
+    :alignedWith :Article16 ;
     :collaboratesWith :UNIL ;
     :endYear 2023 ;
     :focusesOn :ChildDataProtection ;
