@@ -15,7 +15,7 @@ g.parse(ttl_file, format="turtle")
 EX = Namespace("http://www.example.org/childrights#")
 RDFS = Namespace("http://www.w3.org/2000/01/rdf-schema#")
 
-# SPARQL query including CRC alignment
+# SPARQL query including CRC alignment (both old and new predicates)
 query = """
 PREFIX : <http://www.example.org/childrights#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -43,7 +43,11 @@ SELECT ?projectLabel ?startYear ?endYear ?regionLabel ?topicLabel ?ngoName ?crcN
   }
 
   OPTIONAL {
-    ?project :alignsWithCRC ?crc .
+    {
+      ?project :alignsWithCRC ?crc .
+    } UNION {
+      ?project :alignedWith ?crc .
+    }
     ?crc :articleNumber ?crcNumber ;
          rdfs:label ?crcLabel .
   }
