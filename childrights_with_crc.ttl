@@ -256,7 +256,7 @@ xsd:gYear a rdfs:Datatype .
     :collaboratesWith :PsychologySwiss ;
     :endYear 2022 ;
     :focusesOn :MentalHealth ;
-    :implementedBy :TerreDesHommes ;
+    :implementedBy :Projuventud, :TerreDesHommes ;
     :locatedIn :Zurich ;
     :startYear 2020 .
 
