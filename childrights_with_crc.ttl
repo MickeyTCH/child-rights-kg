@@ -90,6 +90,14 @@
     rdfs:label "Respect for the views of the child"^^xsd:string ;
     :articleNumber "12"^^xsd:string .
 
+:CRC_Article_16 a :CRCArticle ;
+    rdfs:label "Right to privacy and data protection"^^xsd:string ;
+    :articleNumber "16"^^xsd:string .
+
+:CRC_Article_19 a :CRCArticle ;
+    rdfs:label "Protection from all forms of violence"^^xsd:string ;
+    :articleNumber "19"^^xsd:string .
+
 :CRC_Article_24 a :CRCArticle ;
     rdfs:label "Right to health and health services"^^xsd:string ;
     :articleNumber "24"^^xsd:string .
@@ -181,7 +189,7 @@ xsd:gYear a rdfs:Datatype .
 :AdvocacyTrainingProject a :Project,
         owl:NamedIndividual ;
     rdfs:label "Advocacy Training for Youth" ;
-    :alignedWith :Article12 ;
+    :alignedWith :CRC_Article12 ;
     :collaboratesWith :UNIL ;
     :endYear 2022 ;
     :focusesOn :RightToParticipation ;
@@ -200,7 +208,7 @@ xsd:gYear a rdfs:Datatype .
 :ChildProtectionCampaign a :Project,
         owl:NamedIndividual ;
     rdfs:label "Child Protection Campaign 2022" ;
-    :alignedWith: Article19 ;
+    :alignedWith : CRC_Article19 ;
     :collaboratesWith :UNICEFSwitzerland ;
     :endYear 2021 ;
     :focusesOn :RightToProtectionFromViolence ;
@@ -211,8 +219,9 @@ xsd:gYear a rdfs:Datatype .
 :ChildRightsDataProject a :Project,
         owl:NamedIndividual ;
     rdfs:label "Child Rights Data Project" ;
-    :alignedWith: Article16 ;
-    :collaboratesWith :UNIL ;
+    :alignedWith :CRC_Article_16 ;  
+
+:collaboratesWith :UNIL ;
     :endYear 2023 ;
     :focusesOn :ChildDataProtection ;
     :implementedBy :SaveTheChildren ;
